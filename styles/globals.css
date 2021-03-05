@@ -14,3 +14,13 @@ a {
 * {
   box-sizing: border-box;
 }
+
+div.Alive {
+  background: rgb(1, 255, 64);
+}
+div.Dead {
+  background-color: red;
+}
+div.unknown {
+  background-color: #000;
+}

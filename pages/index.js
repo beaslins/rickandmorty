@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 const defaultEndpoint = 'https://rickandmortyapi.com/api/character'
@@ -102,17 +103,16 @@ export default function Home({ data }) {
 
         <ul className={styles.grid}>
           {results.map(result =>{
-            const { id, name, image, status, gender, type, location, origin } = result
+            const { id, name, image, status} = result
             return (
               <li key={id} className={styles.card}>
                   <img src={image} alt={name}/>
                   <h3>{name}</h3>
-                  <p>{gender}</p>
-                  <p>{status}</p>
-                  <p>{type}</p>
-                  <p>Location: {location.name}</p>
-                  <p>Origin: {origin.name}</p>
-              </li>  
+                  <p className={styles.status}>
+                    <div className={status}></div>
+                    {status}
+                  </p>
+              </li> 
             )
           })}
 
