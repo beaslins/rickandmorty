@@ -102,13 +102,16 @@ export default function Home({ data }) {
 
         <ul className={styles.grid}>
           {results.map(result =>{
-            const { id, name, image } = result
+            const { id, name, image, status, gender, type, location, origin } = result
             return (
               <li key={id} className={styles.card}>
-                <a href="">
                   <img src={image} alt={name}/>
                   <h3>{name}</h3>
-                </a>
+                  <p>{gender}</p>
+                  <p>{status}</p>
+                  <p>{type}</p>
+                  <p>Location: {location.name}</p>
+                  <p>Origin: {origin.name}</p>
               </li>  
             )
           })}
